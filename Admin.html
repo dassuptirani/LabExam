@@ -1,0 +1,44 @@
+<html>
+<head>
+<body>
+<h1 align="middle">   Welcome Bob!<h1><br>
+<a align="middle" href="Profile">Profile</a><br>
+<a align="middle" href="Change Password">Change Password</a><br>
+<a align="middle" href="View Users">View Users</a><br>
+<a align="middle" href="Logout">Logout</a>
+
+
+</body>
+</head>
+</html>
+
+
+
+
+<?php
+	session_start();
+	
+	if(isset($_SESSION['username'])){
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+</head>
+<body>
+
+	<h1>Welcome Home! <?=$_SESSION['username']?></h1> 
+	<a href="logout.php">logout</a>
+</body>	
+</html>
+
+
+
+<?php		
+	}else{
+		header('location: login.html');
+	}
+
+?>
+
